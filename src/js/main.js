@@ -4,14 +4,13 @@ let formEl = document.querySelector("form")
 
 let submitForm = (event) => {
     event.preventDefault()
-    console.log("Form has been Submited");
 
     const formData = new FormData(formEl);
 
-    console.log([...formData.entries()]);
-    console.log([...formData.values()]);
+    const recordObj = Object.fromEntries(formData)
+    createRecord(recordObj)
 
-    // updateUI()
+    updateUI()
 }
 
 formEl.addEventListener('submit', submitForm)
