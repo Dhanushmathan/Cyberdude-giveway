@@ -1,6 +1,21 @@
 let mainEl = document.querySelector("main");
 let sucessfullUi = document.getElementById("formSubmited");
 let formEl = document.querySelector("form")
+import conditionList from "./conditions.data.js";
+let conditionContainerEl = document.getElementById("conditions")
+
+    // console.log(conditionList)
+    ; (function injectConditions() {
+        let fragment = document.createDocumentFragment()
+
+        // Looping all condtions list
+        conditionList.forEach((condtion) => {
+            let liEl = document.createElement('li')
+            liEl.textContent = condtion
+            fragment.appendChild(liEl)
+        })
+        conditionContainerEl.appendChild(fragment)
+    })()
 
 let validateForm = () => {
     let formInputsEl = formEl.querySelectorAll('input,select,textarea')
@@ -20,7 +35,7 @@ let submitForm = (event) => {
 
     // do validation here
     if (validateForm()) {
-        
+
         const formData = new FormData(formEl);
 
         const recordObj = Object.fromEntries(formData)
