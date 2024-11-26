@@ -37,9 +37,17 @@
                             <label><input type="radio" name="gender" value="others" class="mr-1">Others</label>
                         </div>
                     </div>
-                    <div class="text-sm">
-                        <label for="email" class="block text-gray-800">Email Address</label>
-                        <input type="email" name="email" id="email" placeholder="Email" class="input" required>
+                    <div class="grid grid-cols-2 gap-x-4">
+                        <div class="text-sm">
+                            <label for="email" class="block text-gray-800">Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="you@gmail.com" class="input"
+                                required>
+                        </div>
+                        <div class="text-sm">
+                            <label for="mobile" class="block text-gray-800">Phone number</label>
+                            <input type="number" name="mobile" id="mobile" placeholder="Phone number" class="input"
+                                required>
+                        </div>
                     </div>
                     <div class="text-sm">
                         <label for="dob" class="block text-gray-800">Date Of Birth</label>
@@ -145,6 +153,7 @@
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
     <script src="./js/firebase.js"></script>
 </body>
 

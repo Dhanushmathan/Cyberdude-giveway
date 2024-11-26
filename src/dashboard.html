@@ -37,10 +37,59 @@
     <main class="m-10">
         <div class="bg-white p-5 mx-auto rounded shadow-lg">
             <h3 class="text-sm font-semibold">Dashboard</h3>
-            <p class="text-xs text-gray-500">See the list of registration here</p>
+            <p class="text-xs text-gray-500 mt-1">See the list of registration here</p>
 
-            <table>
-
+            <table class="w-full mt-5 text-sm text-center">
+                <thead>
+                    <tr>
+                        <th class="p-2 border w-10">S.no</th>
+                        <th class="p-2 border">Name</th>
+                        <th class="p-2 border">Communication</th>
+                        <th class="p-2 border">Skills</th>
+                        <th class="p-2 border">Studies</th>
+                        <th class="p-2 border w-48">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-xs">
+                        <td class="p-2 border">1</td>
+                        <td class="p-2 border">
+                            <div>
+                                <span class="text-sm font-semibold">
+                                    Dhanushmathan
+                                </span>
+                                <div class="pt-1">
+                                    Male | 25, sep, 2005
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 border">
+                            <div>
+                                <span>
+                                    <a href="tel:9810036562">9810036562</a>
+                                </span>
+                                <div class="pt-1">
+                                    <a href="mailto:dhanushmathan@gmail.com">dhanushmathan@gmail.com</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 border">
+                            <div>
+                                <span>
+                                    JavaScript, Python, Java
+                                </span>
+                                <div class="pt-1 text-gray-500">
+                                    (10 Years)
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 border">B.Sc - CS</td>
+                        <td class="p-2 border">
+                            <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-1 rounded">View</button>
+                            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
         </div>
@@ -53,6 +102,9 @@
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
     <script src="./js/firebase.js"></script>
+
+    <!-- script for admin intractivity -->
+    <script src="./js/dashboard.js"></script>
 
 </body>
 

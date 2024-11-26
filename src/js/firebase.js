@@ -8,13 +8,15 @@ const firebaseConfig = {
     measurementId: "G-ELHSR5BTPE"
 };
 
+const COLLECTION_NAME = "request"
+
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
 const createRecord = (record) => {
-    return db.collection("request").add({ record })
+    return db.collection(COLLECTION_NAME).add({ record })
         .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
         })
@@ -29,7 +31,6 @@ const loginUser = (email, password) => {
     return new Promise((resolve, reject) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                // Signed in
                 let user = userCredential.user;
                 resolve(user)
             })
@@ -39,5 +40,24 @@ const loginUser = (email, password) => {
 
                 reject({ errorCode, errorMessage })
             });
+    })
+}
+
+
+const getAllRequest = () => {
+    return new Promise((resolve, reject) => {
+        const results = db
+            .collection(COLLECTION_NAME)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    return doc.data()
+                })
+                resolve(results)
+            })
+            .catch((e) => {
+                console.log('error in getting.', e)
+                reject(e)
+            })
     })
 }
